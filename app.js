@@ -49,7 +49,7 @@ const students = [
   "Prakash R","Ravi Teja S","Siddharth N","Varun S","Mohan Raj T",
   "Nitin R" ,"Kamalesh R","Prathiba S","Sumathi R","Sowmiya S","Harini M","Ajith Kumar s",
   "Jayasri K","Lavanya M","Dhanush K","Kutty K","velu S","Surya S","Kowsalya B","Dinesh R",
-  "Suba K","Diya k","Madhu A","Soundarya J"
+  "Suba K","Diya k","Madhu A"
 ];
 
 function emptyState(){
@@ -270,25 +270,18 @@ function autoAssign(){
 
   // reset old assignments
   keys.forEach(k => {
-    if (!Array.isArray(state.assigned[k])) {
-      state.assigned[k] = [];
-    } else {
-      state.assigned[k].length = 0;
-    }
+    state.assigned[k] = [];
   });
 
   students.forEach((s, i) => {
 
-    const key = keys[Math.floor(i / 5)];
+    const key = keys[i % keys.length];
 
-    // SAFE fallback (IMPORTANT)
-    const safeKey = key || keys[0];
-
-    if (!state.assigned[safeKey]) {
-      state.assigned[safeKey] = [];
+    if (!state.assigned[key]) {
+      state.assigned[key] = [];
     }
 
-    state.assigned[safeKey].push({
+    state.assigned[key].push({
       name: s,
       status: "null"
     });
