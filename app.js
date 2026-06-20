@@ -41,13 +41,15 @@ const teacherNameMap = {
 };
 
 const students = [
-  "Arjun Kumar","Vikram","Ghilli","Suresh Kumar","Mersal",
-  "Karthik R","Vishal N","Vijay","Thalapathy","Sanjay R",
-  "Harish Kumar","Praveen Raj","Naveen K","Gokul S","Ramesh V",
-  "Bala Murugan","Dinesh K","Sathish R","Aswanth S","Ganesh Kumar R",
+  "Arjun Kumar","Vikram","Ajay R","Suresh Kumar S","Vinayag Mahadev S",
+  "Karthik R","Vishal N","Vijay C","Iswarya S","Sanjay R",
+  "Harish Kumar G","Praveen Raj G","Naveen K","Gokul S","Ramesh V",
+  "Bala Murugan G","Dinesh K","Sathish R","Aswanth S","Ganesh Kumar R",
   "Lokesh R","Nithish V","Ajay Kumar G","Swetha M","Siva Kumar B",
   "Prakash R","Ravi Teja S","Siddharth N","Varun S","Mohan Raj T",
-  "Bigil" ,"Sarkar","Thuppakki","Leo","Jilla","Pokkiri","Kuruvi"
+  "Nitin R" ,"Kamalesh R","Prathiba S","Sumathi R","Sowmiya S","Harini M","Ajith Kumar s",
+  "Jayasri K","Lavanya M","Dhanush K","Kutty K","velu S","Surya S","Kowsalya B","Dinesh R",
+  "Suba K","Diya k","Madhu A","Soundarya J"
 ];
 
 function emptyState(){
