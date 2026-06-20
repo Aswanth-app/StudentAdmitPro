@@ -1,0 +1,416 @@
+:root{
+  --bg1:#0f766e;
+  --bg2:#0f172a;
+  --accent:#22c55e;
+  --accent2:#10b981;
+  --card:rgba(255,255,255,0.08);
+  --card2:rgba(255,255,255,0.12);
+  --text:#ffffff;
+  --muted:rgba(255,255,255,0.72);
+  --line:rgba(255,255,255,0.12);
+  --shadow:0 20px 50px rgba(0,0,0,0.35);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  min-height:100vh;
+  color:var(--text);
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  transition:0.35s ease;
+}
+
+body.principal{
+  --bg1:#0f766e;
+  --bg2:#0f172a;
+  --accent:#22c55e;
+  --accent2:#10b981;
+}
+
+body.teacher{
+  --bg1:#7c1d1d;
+  --bg2:#0f172a;
+  --accent:#ef4444;
+  --accent2:#f97316;
+}
+
+button,input{font:inherit}
+button{border:none; cursor:pointer; transition:0.2s ease}
+button:hover{transform:translateY(-1px)}
+button:active{transform:translateY(0)}
+
+.hidden{display:none !important}
+
+.wrap{
+  width:min(1280px,94vw);
+  margin:0 auto;
+  padding:22px 0 34px;
+}
+
+.panel,
+.card,
+.stat,
+.teacherCard{
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(16px);
+}
+
+.panel{
+  background:var(--card);
+  border-radius:24px;
+}
+
+.login{
+  width:min(470px,94vw);
+  margin:8vh auto 0;
+  padding:30px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.logo{
+  width:58px;
+  height:58px;
+  border-radius:20px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.06));
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+.logo::before{
+  content:"";
+  position:absolute;
+  inset:-25%;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), transparent 35%),
+             radial-gradient(circle at 70% 70%, rgba(255,255,255,0.24), transparent 35%);
+  opacity:0.75;
+}
+
+.logoMark{
+  position:relative;
+  width:28px;
+  height:28px;
+  border-radius:10px;
+  border:2px solid #fff;
+  transform:rotate(12deg);
+}
+
+.logoMark::before,
+.logoMark::after{
+  content:"";
+  position:absolute;
+  background:#fff;
+  border-radius:999px;
+}
+
+.logoMark::before{
+  width:14px;
+  height:14px;
+  left:-5px;
+  top:-5px;
+}
+
+.logoMark::after{
+  width:8px;
+  height:8px;
+  right:-3px;
+  bottom:-3px;
+}
+
+.title h1{
+  margin:0;
+  font-size:1.55rem;
+  line-height:1.1;
+}
+
+.title p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:0.92rem;
+}
+
+.roleSwitch{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:18px 0;
+}
+
+.role{
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  border:1px solid var(--line);
+  font-weight:700;
+}
+
+.role.active{
+  background:#fff;
+  color:#111827;
+}
+
+.field{
+  width:100%;
+  padding:14px 15px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  outline:none;
+  margin:8px 0;
+  background:rgba(255,255,255,0.06);
+  color:#fff;
+}
+
+.field::placeholder{color:rgba(255,255,255,0.56)}
+
+.primaryBtn{
+  width:100%;
+  padding:13px 16px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;
+  font-weight:800;
+  margin-top:10px;
+  box-shadow:0 12px 24px rgba(0,0,0,0.22);
+}
+
+.secondaryBtn{
+  width:100%;
+  padding:12px 16px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  border:1px solid var(--line);
+  font-weight:700;
+  margin-top:10px;
+}
+
+.smallText{
+  color:var(--muted);
+  font-size:0.88rem;
+  margin-top:10px;
+  line-height:1.5;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.stat{
+  padding:18px;
+  border-radius:18px;
+  background:var(--card2);
+}
+
+.stat .label{
+  color:var(--muted);
+  font-size:0.88rem;
+  margin-bottom:8px;
+}
+
+.stat .value{
+  font-size:1.7rem;
+  font-weight:800;
+}
+
+.card{
+  padding:18px;
+  border-radius:20px;
+  background:var(--card);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(14px);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:14px;
+}
+
+.teacherCard{
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid var(--line);
+}
+
+.teacherHead{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
+.badge{
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:0.8rem;
+  background:rgba(255,255,255,0.1);
+  border:1px solid var(--line);
+}
+
+.studentList{
+  display:grid;
+  gap:10px;
+}
+
+.studentRow{
+  display:grid;
+  grid-template-columns:1.4fr auto;
+  gap:10px;
+  align-items:center;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--line);
+}
+
+.studentName{
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+.studentMeta{
+  font-size:0.86rem;
+  color:var(--muted);
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.tagBtn{
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:0.82rem;
+  font-weight:700;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+.visit{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.notvisit{background:linear-gradient(135deg,#64748b,#94a3b8)}
+.interest{background:linear-gradient(135deg,#f59e0b,#f97316)}
+.confirm{background:linear-gradient(135deg,#22c55e,#16a34a)}
+/* Student Theme */
+.student{
+    background: linear-gradient(135deg,#e5c5e8,#6033c7);
+}
+
+.student .primaryBtn{
+    background:#6926cd;
+}
+
+.student .active{
+    background:#1d1c1d00;
+    color:white;
+}
+.studentDashboard{
+    max-width:500px;
+    margin:30px auto;
+    padding:25px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.studentDashboard h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.studentDashboard input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.studentDashboard button{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#4319cb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+.roleSwitch{
+    display:flex;
+    gap:12px;
+}
+
+.role{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:16px;
+    background:#f3f4f6;
+    color:#333;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* Principal Active */
+.principal .role.active{
+    background:white;
+    color:#16a34a;
+    border-left:5px solid #16a34a;
+}
+
+/* Teacher Active */
+.teacher .role.active{
+    background:white;
+    color:#dc2626;
+    border-left:5px solid #dc2626;
+}
+
+/* Student Active */
+.student .role.active{
+    background:white;
+    color:#2563eb;
+    border-left:5px solid #2563eb;
+}
+
+#TeacherChart{
+  height:200px !important;
+}
+
+#admissionChart{
+  height:250px !important;
+}
